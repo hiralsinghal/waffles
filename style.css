@@ -1,3 +1,15 @@
 body {
     background-color: rgb(211, 255, 255);
+    text-align: center;
+}
+
+h1 {
+    margin: 50px;
+    margin-bottom: 20px;
+}
+
+#searchBox {
+    display: block;
+    background-color: azure;
+    border: 2px solid #c4c4c4;
 }
