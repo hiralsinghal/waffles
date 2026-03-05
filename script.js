@@ -8,6 +8,12 @@ function getCharacter(e) {
     .then((data)=>{
         const nameH2 = document.querySelector("#displayCharName")
 
-        nameH2.textContent = data.name
+        nameH2.textContent = data.results[0].name;
     })
+
+    .catch((err)=>{
+        console.log("Character not found",err)
+    })
+
+    e.preventDefault()
 }
