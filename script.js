@@ -26,7 +26,7 @@ function getCharacter(e) {
         fetch(data.results[0].homeworld)
         .then((response)=>response.json())
         .then((planetData)=>{
-            homeworldP.textContent = `Homeworld: ${planetData.results[0].homeworld}`;
+            homeworldP.textContent = `Homeworld: ${planetData.name}`;
         })
         
     })
