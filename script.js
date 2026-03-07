@@ -54,7 +54,7 @@ function getCharacter(e) {
         })
         }
         
-        
+        document.querySelector(".characterBox").style.display="block";
     })
 
     .catch((err)=>{
