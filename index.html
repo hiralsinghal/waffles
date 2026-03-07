@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,23 +13,23 @@
 
     <body>
         <script type="module" src="script.js"></script>
-        <h1>Star Wars Characters</h1>
-        <div class="searchBox">
+        <h1 class="merriweather-head">Star Wars Characters</h1>
+        <div class="searchBox roboto-text">
             <input id="charName" type="text" placeholder="Character Name">
             <button id="search">Search</button>
         </div>
 
         <div class="characterBox">
-            <h2 id="displayCharName"></h2>
-            <p id="displayHairColor"></p>
-            <p id="displayHeight"></p>
-            <p id="displayMass"></p>
-            <p id="displayEyeColor"></p>
-            <p id="displayBirthYear"></p>
-            <p id="displayGender"></p>
-            <p id="displayHomeworld"></p>
-            <p id="displaySpecies"></p>
-            <p id="displayFilms"></p>
+            <h2 id="displayCharName" class="merriweather-head"></h2>
+            <p id="displayHairColor" class="roboto-text"></p>
+            <p id="displayHeight" class="roboto-text"></p>
+            <p id="displayMass" class="roboto-text"></p>
+            <p id="displayEyeColor" class="roboto-text"></p>
+            <p id="displayBirthYear" class="roboto-text"></p>
+            <p id="displayGender" class="roboto-text"></p>
+            <p id="displayHomeworld" class="roboto-text"></p>
+            <p id="displaySpecies" class="roboto-text"></p>
+            <p id="displayFilms" class="roboto-text"></p>
         </div>
     </body>
 </html>
