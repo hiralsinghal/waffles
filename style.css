@@ -1,15 +1,43 @@
 body {
-    background-color: rgb(211, 255, 255);
+    background-color: rgb(17, 26, 26);
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    color: #ffffff;
 }
 
 h1 {
-    margin: 50px;
-    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    align-self: top;
+    font-size: 65px;
 }
 
-#searchBox {
+.searchBox {
     display: block;
-    background-color: azure;
-    border: 2px solid #c4c4c4;
+    padding: 10px;
+    margin: 20px auto;
+    align-items: center;
+    justify-content: center;
+    width:fit-content;
+    background-color: rgb(250, 255, 255);
+    border: 2px solid #fffafa;
+    border-radius: 100px;
+}
+
+#charName {
+    border: none;
+    background-color: transparent;
+    border-radius: 100px;
+    font-size: 20px;
+    border-radius: 100px 0px 0px 100px;
+    padding-left: 5px;
+}
+
+button {
+    background-color: transparent;
+    font-size: 20px;
+    border-radius: 0px 100px 100px 0px;
+    border: none
 }

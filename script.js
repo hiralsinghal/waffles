@@ -1,5 +1,9 @@
 document.querySelector("#search").addEventListener("click",getCharacter);
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function getCharacter(e) {
     const name = document.querySelector("#charName").value;
 
@@ -13,21 +17,35 @@ function getCharacter(e) {
         const eyeP = document.querySelector("#displayEyeColor");
         const yearP = document.querySelector("#displayBirthYear");
         const genderP = document.querySelector("#displayGender");
-        const homeworldP = document.querySelector("#displayHomeworld");        
+        const homeworldP = document.querySelector("#displayHomeworld");       
+        const filmsP = document.querySelector("#displayFilms") 
 
         nameH2.textContent = data.results[0].name;
-        hairP.textContent = `Hair Color: ${data.results[0].hair_color}`;
+        hairP.textContent = `Hair Color: ${capitalizeFirstLetter(data.results[0].hair_color)}`;
         heightP.textContent = `Height: ${data.results[0].height}`;
         massP.textContent = `Mass: ${data.results[0].mass}`;
-        eyeP.textContent = `Eye Color: ${data.results[0].eye_color}`;
+        eyeP.textContent = `Eye Color: ${capitalizeFirstLetter(data.results[0].eye_color)}`;
         yearP.textContent = `Birth Year: ${data.results[0].birth_year}`;
-        genderP.textContent = `Gender: ${data.results[0].gender}`;
+        genderP.textContent = `Gender: ${capitalizeFirstLetter(data.results[0].gender)}`;
         
         fetch(data.results[0].homeworld)
-        .then((response)=>response.json())
-        .then((planetData)=>{
-            homeworldP.textContent = `Homeworld: ${planetData.name}`;
+            .then((response)=>response.json())
+            .then((planetData)=>{
+                homeworldP.textContent = `Homeworld: ${planetData.name}`;
         })
+
+        
+        let titles = []
+
+        for (let i=0; i<data.results[0].films.length; i++){
+            fetch(data.results[0].films[i])
+                .then((response)=>response.json())
+                .then((film)=>{
+                    titles.push(film.title)
+                    filmsP.textContent = `Films: ${titles.join(", ")}`;
+        })
+        }
+        
         
     })
 
