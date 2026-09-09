@@ -1,10 +1,10 @@
-document.getElementById("search").addEventListener("click", getCharacter());
+document.getElementById("search").addEventListener("click", getCharacter);
 
 function lowerCaseName(string) {
     return string.toLowerCase();
 }
 
-function getCharacter(e) {
+function getCharacter() {
     const name = document.getElementById("searchCharacter").value;
     const characterNameLC = lowerCaseName(name);
 
@@ -18,6 +18,4 @@ function getCharacter(e) {
     .catch((err) => {
         console.log("Character not found", err)
     })
-
-    e.preventDefault();
 }
