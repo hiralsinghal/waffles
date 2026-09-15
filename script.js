@@ -17,14 +17,14 @@ function getCharacter() {
     fetch(`https://rickandmortyapi.com/api/character/?name=${characterNameLC}`)
     .then((response)=>response.json())
     .then((data) => {
-        const characterNameH2 = document.getElementById("characterName");
+        const characterNameH3 = document.getElementById("characterName");
         const characterStatusP = document.getElementById("characterStatus");
         const characterSpeciesP = document.getElementById("characterSpecies");
         const characterOriginP = document.getElementById("characterOrigin");
         const characterLocationP = document.getElementById("characterLocation");
         const characterImgImg = document.getElementById("characterImg");
 
-        characterNameH2.textContent = data.results[0].name;
+        characterNameH3.textContent = data.results[0].name;
         characterStatusP.textContent = data.results[0].status;
         characterSpeciesP.textContent = data.results[0].species;
         characterOriginP.textContent = data.results[0].origin.name;
