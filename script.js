@@ -1,7 +1,7 @@
 document.getElementById("search").addEventListener("click", getCharacter);
 
 document.getElementById("searchCharacter").addEventListener("keypress", function(event) {
-    if (event.keyCode === 13) {
+    if (event.key === "Enter") {
         getCharacter();
     }
 });
