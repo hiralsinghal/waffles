@@ -10,7 +10,7 @@ function lowerCaseName(string) {
     return string.toLowerCase();
 }
 
-function getCharacterIDs(residents) {
+function getCharacterIDS(residents) {
     return residents.map((url) => url.split("/").pop());
 }
 
@@ -37,12 +37,14 @@ function getLocation() {
             return;
         }
 
-        fetch(`https://rickandmortyapi.com/api/character/?name=${residentsIDS.join(",")}`)
+        fetch(`https://rickandmortyapi.com/api/character/${residentsIDS.join(",")}`)
         .then((response) => response.json())
         .then((characterData) => {
             const locationResidentsP = document.getElementById("locationResidents")
-            locationResidentsP.textContent = characterData.results.map((character) => character.name).join(", ");
+            const residentsArray = Array.isArray(characterData) ? characterData : [characterData];
+            locationResidentsP.textContent = residentsArray.map((character) => character.name).join(", ");
         })
+
         .catch((err) => {
             console.log("Residents not found", err);
         })

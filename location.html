@@ -2,18 +2,28 @@
 <html>
     <head>
         <title>Location | Rick & Morty API</title>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <h1>Rick and Morty API</h1>
-        <h2>Location</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Character</a></li>
+                <li><a href="location.html">Location</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <h1>Rick and Morty API</h1>
+            <h2>Location</h2>
+        </header>
 
         <div class="searchBox">
             <input id="searchLocation" type="text" placeholder="Enter a location">
             <button id="search">Search</button>
         </div>
 
-        <div class="locationBox">
+        <div class="resultBox locationBox">
             <h3 id="locationName"></h3>
             <p id="locationType"></p>
             <p id="locationDimension"></p>

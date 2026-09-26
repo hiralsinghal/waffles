@@ -2,18 +2,29 @@
 <html lang="en">
     <head>
         <title>Waffles Fr Fr</title>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <h1>Rick and Morty API</h1>
-        <h2>Character</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Character</a></li>
+                <li><a href="location.html">Location</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <h1>Rick and Morty API</h1>
+            <h2>Character</h2>
+        </header>
+        
 
         <div class="searchBox">
             <input id="searchCharacter" type="text" placeholder="Enter a character">
             <button id="search">Search</button>
         </div>
 
-        <div class="characterBox">
+        <div class="resultBox characterBox">
             <h3 id="characterName"></h3>
             <p id="characterStatus"></p>
             <p id="characterSpecies"></p>

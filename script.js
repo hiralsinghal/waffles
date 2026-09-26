@@ -1,6 +1,9 @@
+const box = document.getElementsByClassName("resultBox")
+
 document.getElementById("search").addEventListener("click", getCharacter);
 
 document.getElementById("searchCharacter").addEventListener("keypress", function(event) {
+    box.style.display = flex;
     if (event.key === "Enter") {
         getCharacter();
     }
