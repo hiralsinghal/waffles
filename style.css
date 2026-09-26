@@ -14,13 +14,11 @@ body {
 
 nav {
     margin: 10px auto;
-    background-color: #fff874;
     width: auto;
     height: 50px;
     display: flex;
     align-items: center;
-    justify-items: center;
-    border-radius: 10px;
+    justify-content: center;
 }
 
 nav ul {
@@ -28,6 +26,8 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    border-radius: 10px;
 }
 
 nav ul li {
@@ -35,19 +35,19 @@ nav ul li {
 }
 
 nav ul li a {
+    display: block;
     padding: 15px 15px;
     text-decoration: none;
     background-color: #fff874;
 }
 
 nav ul li a:hover {
-    padding: 15px 15px;
     text-decoration: none;
     background-color: #3A4767;
     color: white;
 }
 
-nav ul li a.active {
+nav ul li a:active {
     background-color: #3A4767;
     color: white;
 }
