@@ -1,9 +1,8 @@
-const box = document.getElementsByClassName("resultBox")
+const box = document.querySelector(".resultBox")
 
 document.getElementById("search").addEventListener("click", getCharacter);
 
 document.getElementById("searchCharacter").addEventListener("keypress", function(event) {
-    box.style.display = flex;
     if (event.key === "Enter") {
         getCharacter();
     }
@@ -14,6 +13,7 @@ function lowerCaseName(string) {
 }
 
 function getCharacter() {
+    box.style.display = "flex";
     const name = document.getElementById("searchCharacter").value;
     const characterNameLC = lowerCaseName(name);
 
@@ -28,10 +28,10 @@ function getCharacter() {
         const characterImgImg = document.getElementById("characterImg");
 
         characterNameH3.textContent = data.results[0].name;
-        characterStatusP.textContent = data.results[0].status;
-        characterSpeciesP.textContent = data.results[0].species;
-        characterOriginP.textContent = data.results[0].origin.name;
-        characterLocationP.textContent = data.results[0].location.name;
+        characterStatusP.innerHTML = `<b>Status:</b> ${data.results[0].status}`;
+        characterSpeciesP.innerHTML = `<b>Species:</b> ${data.results[0].species}`;
+        characterOriginP.innerHTML = `<b>Origin:</b> ${data.results[0].origin.name}`;
+        characterLocationP.innerHTML = `<b>Location:</b> ${data.results[0].location.name}`;
         characterImgImg.src = data.results[0].image;
     })
     .catch((err) => {

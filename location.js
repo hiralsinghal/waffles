@@ -1,3 +1,5 @@
+const box = document.querySelector(".resultBox")
+
 document.getElementById("search").addEventListener("click", getLocation);
 
 document.getElementById("searchLocation").addEventListener("keypress", function(event) {
@@ -15,6 +17,8 @@ function getCharacterIDS(residents) {
 }
 
 function getLocation() {
+    box.style.display = "flex";
+
     const name = document.getElementById("searchLocation").value;
     const locationNameLC = lowerCaseName(name);
 
@@ -26,8 +30,8 @@ function getLocation() {
         const locationDimensionP = document.getElementById("locationDimension");
 
         locationNameH3.textContent = data.results[0].name;
-        locationTypeP.textContent = data.results[0].type;
-        locationDimensionP.textContent = data.results[0].dimension;
+        locationTypeP.innerHTML = `<b>Type:</b> ${data.results[0].type}`;
+        locationDimensionP.innerHTML = `<b>Dimension:</b> ${data.results[0].dimension}`;
         
         const residentsIDS = getCharacterIDS(data.results[0].residents);
         
@@ -42,7 +46,7 @@ function getLocation() {
         .then((characterData) => {
             const locationResidentsP = document.getElementById("locationResidents")
             const residentsArray = Array.isArray(characterData) ? characterData : [characterData];
-            locationResidentsP.textContent = residentsArray.map((character) => character.name).join(", ");
+            locationResidentsP.innerHTML = `<b>Residents:</b> ${residentsArray.map((character) => character.name).join(", ")}`;
         })
 
         .catch((err) => {
