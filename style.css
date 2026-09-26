@@ -40,10 +40,21 @@ nav ul li a {
     background-color: #fff874;
 }
 
+nav ul li a:hover {
+    padding: 15px 15px;
+    text-decoration: none;
+    background-color: #3A4767;
+    color: white;
+}
+
+nav ul li a.active {
+    background-color: #3A4767;
+    color: white;
+}
+
 header {
     text-align: center;
-    margin: 50% auto;
-    min-height: 100vh;
+    margin: 20px auto;
 }
 
 header h1 {
