@@ -10,6 +10,10 @@ function lowerCaseName(string) {
     return string.toLowerCase();
 }
 
+function getCharacterIDs(residents) {
+    return residents.map((url) => url.split("/").pop());
+}
+
 function getLocation() {
     const name = document.getElementById("searchLocation").value;
     const locationNameLC = lowerCaseName(name);
@@ -20,12 +24,28 @@ function getLocation() {
         const locationNameH3 = document.getElementById("locationName");
         const locationTypeP = document.getElementById("locationType");
         const locationDimensionP = document.getElementById("locationDimension");
-        const locationResidentsP = document.getElementById("locationResidents")
 
         locationNameH3.textContent = data.results[0].name;
         locationTypeP.textContent = data.results[0].type;
         locationDimensionP.textContent = data.results[0].dimension;
-        locationResidentsP.textContent = data.results[0].residents;
+        
+        const residentsIDS = getCharacterIDS(data.results[0].residents);
+        
+        if (residentsIDS.length === 0) {
+            const locationResidentsP = document.getElementById("locationResidents");
+            locationResidentsP.textContent = "No residents found";
+            return;
+        }
+
+        fetch(`https://rickandmortyapi.com/api/character/?name=${residentsIDS.join(",")}`)
+        .then((response) => response.json())
+        .then((characterData) => {
+            const locationResidentsP = document.getElementById("locationResidents")
+            locationResidentsP.textContent = characterData.results.map((character) => character.name).join(", ");
+        })
+        .catch((err) => {
+            console.log("Residents not found", err);
+        })
     })
     .catch((err) => {
         console.log("Location not found", err)
